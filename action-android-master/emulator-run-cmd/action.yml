@@ -1,0 +1,34 @@
+name: 'Android Emulator Action combined with a cmd execution'
+description: 'Starts Android emulator via existing Android SDK installation and executes a shell command in parallel'
+author: 'Malinskiy'
+inputs:
+  api:
+    description: 'api version of the emulator'
+    default: '25'
+  abi:
+    description: 'abi of the emulator'
+    default: 'x86'
+  tag:
+    description: 'default or google_apis'
+    default: 'default'
+  cmd:
+    description: 'cmd to execute while the emulator is running'
+    default: ''
+  disableAnimations:
+    description: ''
+    default: 'false'
+  cmdOptions:
+    description: 'additional emulator options passed to the emulator start cmd'
+    default: '-no-snapshot-save -noaudio -no-boot-anim'
+  hardwareProfile:
+    description: 'device profile to use. see avdmanager list for possible options'
+    default: ''
+  bootTimeout:
+    description: 'Boot emulator timeout (seconds)'
+    default: '600'
+  verbose:
+    description: 'be verbose'
+    default: 'false'
+runs:
+  using: 'node12'
+  main: 'lib/main.js'
