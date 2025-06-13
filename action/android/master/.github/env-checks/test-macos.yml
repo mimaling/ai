@@ -1,7 +1,0 @@
-name: "Test hypervisor support on macos"
-on: push
-jobs:
-  test:
-    runs-on: macOS-10.14
-    steps:
-      - run: sysctl kern.hv_support
